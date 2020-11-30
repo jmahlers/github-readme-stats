@@ -1,7 +1,7 @@
 name: Scheduled Merge Remote Action
 on: 
   schedule:
-    - cron: '31 1 * * 1'
+    - cron: '04 2 * * 1'
     # scheduled for 00:00 every Monday
 
 jobs:
@@ -11,11 +11,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: upstream             # set the branch to merge to
+          ref: master             # set the branch to merge to
           fetch-depth: 0 
       - name: Merge Upstream
         uses: exions/merge-upstream@v1
         with:
-          upstream: owner/repo      # set the upstream repo
+          upstream: anuraghazra/github-readme-stats      # set the upstream repo
           upstream-branch: master   # set the upstream branch to merge from
-          branch: upstream          # set the branch to merge to
+          branch: master          # set the branch to merge to
